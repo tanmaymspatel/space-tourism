@@ -1,3 +1,75 @@
 #header {
     flex: 0 0 100px;
+    padding-left: 2rem;
+    margin-top: 2rem;
+
+    .logo-container {
+        width: 20%;
+    }
+
+    .nav-links {
+        height: 100%;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 50%;
+            background: $light;
+            left: -10%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+    }
+
+    .nav-item {
+        height: 100%;
+    }
+
+    .link-container {
+        width: 65%;
+        background-color: rgba($light, 0.15);
+        backdrop-filter: blur(30px);
+        padding-left: 4rem;
+    }
+
+    .nav-link {
+        padding: 0 2rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        &.active {
+            .nav-text {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .nav-text {
+        color: $light;
+        font-size: 1.25rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 3px;
+            background: $light;
+            bottom: 0;
+            transition: $transition-timing all;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
 }
