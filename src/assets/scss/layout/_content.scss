@@ -1,0 +1,20 @@
+.background-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &.home-background {
+        background-image: url("../../images/home/background-home-desktop.jpg");
+    }
+
+    &.destination-background {
+        background-image: url("../../images/destination/background-destination-desktop.jpg");
+    }
+
+    &.crew-background {
+        background-image: url("../../images/crew/background-crew-desktop.jpg");
+    }
+
+    &.technology-background {
+        background-image: url("../../images/technology/background-technology-desktop.jpg");
+    }
+}
