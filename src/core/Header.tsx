@@ -6,7 +6,7 @@ function Header() {
         <>
             <figure className="logo-container">
                 <NavLink to="/">
-                    <img src={logo} alt="space-tourism" />
+                    <img src={logo} alt="space-tourism" className="logo" />
                 </NavLink>
             </figure>
             <nav className="nav-links flex-grow-1 d-flex justify-content-end">

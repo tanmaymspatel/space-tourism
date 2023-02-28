@@ -3,18 +3,132 @@
     background-size: cover;
 
     &.home-background {
-        background-image: url("../../images/home/background-home-desktop.jpg");
+        background-image: url("../../images/home/background-home-mobile.jpg");
+
+        @include breakpoint-up(sm) {
+            background-image: url("../../images/home/background-home-tablet.jpg");
+        }
+
+        @include breakpoint-up(md) {
+            background-image: url("../../images/home/background-home-desktop.jpg");
+        }
     }
 
     &.destination-background {
-        background-image: url("../../images/destination/background-destination-desktop.jpg");
+        background-image: url("../../images/destination/background-destination-mobile.jpg");
+
+        @include breakpoint-up(sm) {
+            background-image: url("../../images/destination/background-destination-tablet.jpg");
+        }
+
+        @include breakpoint-up(md) {
+            background-image: url("../../images/destination/background-destination-desktop.jpg");
+        }
     }
 
     &.crew-background {
-        background-image: url("../../images/crew/background-crew-desktop.jpg");
+        background-image: url("../../images/crew/background-crew-mobile.jpg");
+
+        @include breakpoint-up(sm) {
+            background-image: url("../../images/crew/background-crew-tablet.jpg");
+        }
+
+        @include breakpoint-up(md) {
+            background-image: url("../../images/crew/background-crew-desktop.jpg");
+        }
     }
 
     &.technology-background {
-        background-image: url("../../images/technology/background-technology-desktop.jpg");
+        background-image: url("../../images/technology/background-technology-mobile.jpg");
+
+        @include breakpoint-up(sm) {
+            background-image: url("../../images/technology/background-technology-tablet.jpg");
+        }
+
+        @include breakpoint-up(md) {
+            background-image: url("../../images/technology/background-technology-desktop.jpg");
+        }
+    }
+}
+
+.col {
+    width: 100%;
+
+    @include breakpoint-up(md) {
+        width: 48%;
+    }
+}
+
+.section {
+    .pre-title {
+        font-size: 1rem;
+        padding: 0.5rem 0;
+        letter-spacing: 2px;
+
+        @include breakpoint-up(sm) {
+            font-size: 1.5rem;
+        }
+
+        @include breakpoint-up(md) {
+            font-size: 2rem;
+            padding: 1rem 0;
+        }
+    }
+
+    .title {
+        font-size: 4rem;
+        letter-spacing: 14px;
+        padding-bottom: 0.5rem;
+
+        @include breakpoint-up(sm) {
+            font-size: 5rem;
+        }
+
+        @include breakpoint-up(md) {
+            font-size: 8rem;
+            padding-bottom: 1rem;
+        }
+    }
+
+    .description {
+        font-size: 1.5rem;
+        padding: 0.5rem 0;
+        line-height: 32px;
+
+        @include breakpoint-up(sm) {
+            line-height: 35px;
+        }
+
+        @include breakpoint-up(md) {
+            line-height: 37px;
+            padding: 1rem 0;
+        }
+    }
+
+    .col-explore {
+        height: auto;
+        justify-content: center;
+
+        @include breakpoint-up(md) {
+            height: 100%;
+            justify-content: end;
+        }
+    }
+
+    .home-explore {
+        height: 250px;
+        width: 250px;
+        background: white;
+        border-radius: 50%;
+        position: relative;
+    }
+
+    .explore-text {
+        position: absolute;
+        font-size: 2rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        letter-spacing: 2px;
     }
 }
