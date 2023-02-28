@@ -15,40 +15,42 @@ function Destination() {
     })
 
     return (
-        <div className="container h-100 d-flex align-items-center">
-            <div className="row h-100 w-100 align-items-center">
-                <div className="col image-col">
-                    <h3 className="heading fw-light text-align">
-                        <span className="heading-index">01</span>
-                        <span className="text-uppercase text-light">Pick Your Destination</span>
-                    </h3>
-                    <figure className="image-container text-align">
-                        <img src={currentDestination?.image} alt={currentDestination?.title} className="destination-image" />
-                    </figure>
-                </div>
-                <div className="col destination-col text-light d-flex flex-column">
-                    <div className="destination-header">
-                        <nav className="d-flex align-items-center justify-content-between">
-                            {destinationTabs}
-                        </nav>
+        <section className="section h-100">
+            <div className="container h-100 d-flex align-items-center">
+                <div className="row h-100 w-100 align-items-center">
+                    <div className="col image-col">
+                        <h3 className="heading fw-light text-align">
+                            <span className="heading-index">01</span>
+                            <span className="text-uppercase text-light">Pick Your Destination</span>
+                        </h3>
+                        <figure className="image-container text-align">
+                            <img src={currentDestination?.image} alt={currentDestination?.title} className="destination-image" />
+                        </figure>
                     </div>
-                    <div className="flex-grow-1 text-align">
-                        <h2 className="destination-title text-uppercase fw-light">{currentDestination?.title}</h2>
-                        <p className="destination-description">{currentDestination?.description}</p>
-                        <div className="row destination-footer">
-                            <div className="destination-footer-col">
-                                <h6 className="footer-pre-heading fw-light text-uppercase">Avg. Distance</h6>
-                                <h3 className="footer-heading fw-light">{currentDestination?.avgDistance}</h3>
-                            </div>
-                            <div className="destination-footer-col">
-                                <h6 className="footer-pre-heading fw-light text-uppercase">Est. Travel Time</h6>
-                                <h3 className="footer-heading fw-light">{currentDestination?.estTravelTime}</h3>
+                    <div className="col destination-col text-light d-flex flex-column">
+                        <div className="destination-header">
+                            <nav className="d-flex align-items-center justify-content-between">
+                                {destinationTabs}
+                            </nav>
+                        </div>
+                        <div className="flex-grow-1 text-align">
+                            <h2 className="destination-title text-uppercase fw-light">{currentDestination?.title}</h2>
+                            <p className="destination-description">{currentDestination?.description}</p>
+                            <div className="row destination-footer">
+                                <div className="destination-footer-col">
+                                    <h6 className="footer-pre-heading fw-light text-uppercase">Avg. Distance</h6>
+                                    <h3 className="footer-heading fw-light">{currentDestination?.avgDistance}</h3>
+                                </div>
+                                <div className="destination-footer-col">
+                                    <h6 className="footer-pre-heading fw-light text-uppercase">Est. Travel Time</h6>
+                                    <h3 className="footer-heading fw-light">{currentDestination?.estTravelTime}</h3>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 };
 
