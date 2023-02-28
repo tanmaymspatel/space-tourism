@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom';
+import Routing from './core/components/Routing';
 
 import Header from "./core/Header";
 
@@ -14,7 +15,7 @@ function App() {
         <Header />
       </header>
       <main className="main-content flex-grow-1">
-        main
+        <Routing />
       </main>
     </div>
   );
