@@ -14,8 +14,10 @@ function App() {
       <header id="header" className="d-flex align-items-center justify-content-between">
         <Header />
       </header>
-      <main className="main-content flex-grow-1">
-        <Routing />
+      <main className="main-content flex-grow-1 overflow-y-auto">
+        <section className="section h-100">
+          <Routing />
+        </section>
       </main>
     </div>
   );
