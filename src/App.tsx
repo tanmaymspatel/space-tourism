@@ -15,9 +15,7 @@ function App() {
         <Header />
       </header>
       <main className="main-content flex-grow-1 overflow-y-auto">
-        <section className="section h-100">
-          <Routing />
-        </section>
+        <Routing />
       </main>
     </div>
   );
