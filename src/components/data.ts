@@ -45,7 +45,7 @@ export const destinationData = [
 
 //------------------------  crew data -----------------------------------------------------------------
 
-export const crewData = [
+export const crewMembersData = [
     {
         id: 1,
         name: "Douglas Hurley",

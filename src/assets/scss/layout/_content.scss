@@ -280,4 +280,122 @@
         }
     }
 
+    //----------------------------------------- crew ---------------------------------------
+
+
+    .crew-container {
+        padding: 0 1rem;
+
+        @include breakpoint-up (sm) {
+            padding: 0 3rem;
+
+        }
+
+        @include breakpoint-up (md) {
+            padding: 0;
+
+        }
+    }
+
+    .crew-row {
+        padding-top: 0rem;
+
+        @include breakpoint-up(lg) {
+            padding-top: 5rem;
+        }
+    }
+
+    .crew-details-col {
+        padding: 3rem 0;
+
+        @include breakpoint-up(md) {
+            padding: 4rem 0;
+        }
+    }
+
+    .dot-container {
+        padding-top: 2rem;
+        justify-content: center;
+
+        @include breakpoint-up(md) {
+            justify-content: start;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            background-color: rgba($light, 0.35);
+            margin-right: 2rem;
+
+            @include breakpoint-up(md) {
+                height: 15px;
+                width: 15px;
+            }
+
+            &.active {
+                background-color: $light;
+            }
+        }
+    }
+
+    .crew-position {
+        font-size: 1.5rem;
+        color: rgba($light, 0.5);
+        letter-spacing: 2px;
+
+        @include breakpoint-up(sm) {
+            font-size: 1.75rem;
+        }
+
+        @include breakpoint-up(md) {
+            font-size: 2rem;
+        }
+    }
+
+    .crew-name {
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+        padding: 0.5rem 0;
+        font-family: "Bellefair", serif;
+
+        @include breakpoint-up(md) {
+            padding: 1rem 0;
+        }
+    }
+
+    .crew-description {
+        color: $secondary;
+        font-size: 1.25rem;
+        line-height: 30px;
+        padding: 1rem 2rem;
+        height: 130px;
+
+        @include breakpoint-up(md) {
+            line-height: 35px;
+            height: 190px;
+            padding: 1rem 0;
+        }
+    }
+
+    .crew-image {
+        height: 420px;
+        width: auto;
+        position: absolute;
+        right: 50%;
+        bottom: 0;
+        transform: translateX(50%);
+
+        @include breakpoint-up(md) {
+            height: 500px;
+            width: auto;
+            position: absolute;
+            right: 0;
+            transform: translateX(0%);
+        }
+
+        @include breakpoint-up(lg) {
+            height: auto;
+        }
+    }
 }

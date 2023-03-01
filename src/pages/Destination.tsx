@@ -19,7 +19,7 @@ function Destination() {
             <div className="container h-100 d-flex align-items-center">
                 <div className="row h-100 w-100 align-items-center">
                     <div className="col image-col">
-                        <h3 className="heading fw-light text-align">
+                        <h3 className="heading fw-light">
                             <span className="heading-index">01</span>
                             <span className="text-uppercase text-light">Pick Your Destination</span>
                         </h3>
