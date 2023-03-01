@@ -1,3 +1,19 @@
+.show-sm {
+    display: block;
+
+    @include breakpoint-up(md) {
+        display: none;
+    }
+}
+
+.show-lg {
+    display: none;
+
+    @include breakpoint-up(md) {
+        display: block;
+    }
+}
+
 .background-image {
     background-repeat: no-repeat;
     background-size: cover;
@@ -60,6 +76,8 @@
 }
 
 .main-content {
+    position: relative;
+
     .pre-title {
         font-size: 1rem;
         padding: 0.5rem 0;
@@ -143,18 +161,9 @@
     }
 
     .heading {
-        padding: 1rem 0;
+        padding: 3rem 0 1rem;
         font-size: 1.75rem;
         letter-spacing: 1px;
-
-        @include breakpoint-up(sm) {
-            padding: 2rem 0;
-        }
-
-        @include breakpoint-up(md) {
-            padding: 3rem 0;
-
-        }
 
         .heading-index {
             color: rgba($light, 0.5);
@@ -280,8 +289,7 @@
         }
     }
 
-    //----------------------------------------- crew ---------------------------------------
-
+    // crew
 
     .crew-container {
         padding: 0 1rem;
@@ -396,6 +404,143 @@
 
         @include breakpoint-up(lg) {
             height: auto;
+        }
+    }
+
+    // technology
+
+    .technology-row {
+        padding-top: 22.5rem;
+
+        @include breakpoint-up(md) {
+            padding-top: 0px;
+        }
+    }
+
+    .tech-col-1 {
+        width: 100%;
+
+        @include breakpoint-up(md) {
+            width: 60%;
+        }
+
+        @include breakpoint-up(xl) {
+            width: 68%;
+        }
+    }
+
+    .tech-col-2 {
+        width: 28%;
+        padding-left: 4rem;
+    }
+
+    .tech-details-row {
+        flex-direction: column;
+
+        @include breakpoint-up(md) {
+            flex-direction: row;
+        }
+    }
+
+    .tech-detail-col-1 {
+        width: 100%;
+
+        @include breakpoint-up(md) {
+            width: 20%;
+
+        }
+    }
+
+    .tech-detail-col-2 {
+        width: 100%;
+        padding: 1rem 0;
+
+        @include breakpoint-up(md) {
+            width: 80%;
+        }
+    }
+
+    .tech-nav {
+        display: flex;
+        padding: 1rem 0;
+
+        @include breakpoint-up(md) {
+            flex-direction: column;
+            padding: 0;
+        }
+    }
+
+    .tech-link {
+        height: 40px;
+        width: 40px;
+        background-color: transparent;
+        color: $light;
+        border: 1px solid rgba($light, 0.5);
+        border-radius: 50%;
+        margin: 0 1rem 0 0;
+        font-size: 1rem;
+
+        @include breakpoint-up(md) {
+            font-size: 1.75rem;
+            margin: 0 0 2rem 0;
+            height: 60px;
+            width: 60px;
+        }
+
+        @include breakpoint-up(lg) {
+            height: 75px;
+            width: 75px;
+        }
+
+        &.active {
+            background-color: $light;
+            color: $dark;
+        }
+    }
+
+    .tech-pre-heading {
+        color: $secondary;
+        font-size: 1rem;
+        letter-spacing: 2px;
+
+        @include breakpoint-up(md) {
+            font-size: 1.25rem;
+        }
+    }
+
+    .tech-name {
+        font-size: 2.5rem;
+        font-family: "Bellefair", serif;
+        padding: 0.5rem 0;
+
+        @include breakpoint-up(xl) {
+            padding: 1rem 0;
+            font-size: 3.5rem;
+        }
+    }
+
+    .tech-description {
+        color: $secondary;
+        font-size: 1.25rem;
+        line-height: 35px;
+        height: 150px;
+
+        @include breakpoint-up(md) {
+            height: auto;
+        }
+    }
+
+    .tech-image {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 31%;
+        transform: translateY(-50%);
+
+        @include breakpoint-up(md) {
+            top: 50%;
+            left: auto;
+            height: 50%;
         }
     }
 }
