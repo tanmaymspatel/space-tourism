@@ -7,7 +7,7 @@ function Crew() {
 
     const activeCrewMember = crewMembersData[crewMemberIndex];
     return (
-        <div className="container h-100 position-relative crew-container">
+        <div className="container h-100 position-relative">
             <h3 className="heading fw-light">
                 <span className="heading-index">02</span>
                 <span className="text-uppercase text-light">Meet Your Crew</span>

@@ -120,14 +120,14 @@ button {
 
 @media (max-width: 768px) {
     .container {
-        padding: 0;
+        padding: 0 3rem;
         // max-width: 540px;
     }
 }
 
 @media (min-width: 768px) {
     .container {
-        max-width: 720px;
+        max-width: 750px;
     }
 }
 
