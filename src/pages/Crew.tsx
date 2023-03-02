@@ -23,6 +23,7 @@ function Crew() {
                                 return (
                                     <p className={`${crewMemberIndex === index ? "active" : ""} dot cursor-pointer`}
                                         onClick={() => setCrewMemberIndex(index)}
+                                        key={data.id}
                                     />
                                 )
                             })

@@ -10,6 +10,7 @@ function Destination() {
         return (
             <p className={`${destIndex === index ? "active" : ""} destination-link text-uppercase cursor-pointer`}
                 onClick={() => setIndex(index)}
+                key={data.id}
             >{data.title}</p>
         )
     })

@@ -21,6 +21,7 @@ function Technology() {
                                 {techData.map((data, index) => {
                                     return <p className={`${techIndex === index ? "active" : ""} tech-link d-flex align-items-center justify-content-center cursor-pointer`}
                                         onClick={() => setTechIndex(index)}
+                                        key={data.id}
                                     >{index + 1}</p>
                                 })}
                             </div>

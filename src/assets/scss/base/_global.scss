@@ -240,7 +240,7 @@ li {
 .text-align {
     text-align: center;
 
-    @include breakpoint-up(md) {
+    @include breakpoint-up(lg) {
         text-align: inherit;
     }
 }
