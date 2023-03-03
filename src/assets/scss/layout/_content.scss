@@ -161,7 +161,7 @@
     }
 
     .heading {
-        padding: 3rem 0 1rem;
+        padding: 2rem 0 1rem;
         font-size: 1.75rem;
         letter-spacing: 1px;
 
@@ -258,7 +258,11 @@
         margin-bottom: 1rem;
         border-bottom: 1px solid $light;
         line-height: 35px;
-        height: 150px;
+        height: 200px;
+
+        @include breakpoint-up(sm) {
+            height: 150px;
+        }
 
         @include breakpoint-up(lg) {
             height: 180px;
@@ -304,7 +308,11 @@
     }
 
     .crew-details-col {
-        padding: 3rem 0;
+        padding: 2rem 0;
+
+        @include breakpoint-up(sm) {
+            padding: 3rem 0;
+        }
 
         @include breakpoint-up(lg) {
             padding: 4rem 0;
@@ -352,10 +360,14 @@
     }
 
     .crew-name {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         letter-spacing: 3px;
         padding: 0.5rem 0;
         font-family: "Bellefair", serif;
+
+        @include breakpoint-up(sm) {
+            font-size: 2rem;
+        }
 
         @include breakpoint-up(lg) {
             padding: 1rem 0;
@@ -366,8 +378,13 @@
         color: $secondary;
         font-size: 1.25rem;
         line-height: 30px;
-        padding: 1rem 2rem;
-        height: 130px;
+        padding: 1rem 0.5rem;
+        height: 210px;
+
+        @include breakpoint-up(sm) {
+            padding: 1rem 2rem;
+            height: 130px;
+        }
 
         @include breakpoint-up(md) {
             padding: 1rem 4rem;
@@ -381,12 +398,16 @@
     }
 
     .crew-image {
-        height: 420px;
+        height: 350px;
         width: auto;
         position: absolute;
         right: 50%;
         bottom: 0;
         transform: translateX(50%);
+
+        @include breakpoint-up(sm) {
+            height: 420px;
+        }
 
         @include breakpoint-up(lg) {
             height: 500px;
@@ -552,4 +573,16 @@
             height: 50%;
         }
     }
+}
+
+// transition group 
+.transition-enter {
+    transition: transform 0.6s ease-out, opacity 0.6s ease-in;
+    transform: scale(0.75);
+    opacity: 0;
+}
+
+.transition-enter-active {
+    transform: none;
+    opacity: 1;
 }

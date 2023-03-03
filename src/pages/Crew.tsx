@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import { crewMembersData } from "../components/data";
 
@@ -14,9 +15,23 @@ function Crew() {
             </h3>
             <div className="row text-light crew-row text-align">
                 <div className="col crew-details-col">
-                    <h3 className="crew-position text-uppercase fw-light">{activeCrewMember?.position}</h3>
-                    <h2 className="crew-name text-uppercase fw-light">{activeCrewMember?.name}</h2>
-                    <p className="crew-description fw-light">{activeCrewMember?.description}</p>
+                    <TransitionGroup>
+                        <CSSTransition
+                            timeout={600}
+                            key={crewMemberIndex}
+                            classNames={{
+                                enter: "transition-enter",
+                                enterActive: "transition-enter-active",
+                                exit: "d-none",
+                            }}
+                        >
+                            <div>
+                                <h3 className="crew-position text-uppercase fw-light">{activeCrewMember?.position}</h3>
+                                <h2 className="crew-name text-uppercase fw-light">{activeCrewMember?.name}</h2>
+                                <p className="crew-description fw-light">{activeCrewMember?.description}</p>
+                            </div>
+                        </CSSTransition>
+                    </TransitionGroup>
                     <div className="dot-container d-flex align-items-center">
                         {
                             crewMembersData.map((data, index) => {
@@ -31,7 +46,19 @@ function Crew() {
                     </div>
                 </div>
                 <div className="col">
-                    <img src={activeCrewMember?.image} alt={activeCrewMember?.name} className="crew-image" />
+                    <TransitionGroup>
+                        <CSSTransition
+                            timeout={600}
+                            key={crewMemberIndex}
+                            classNames={{
+                                enter: "transition-enter",
+                                enterActive: "transition-enter-active",
+                                exit: "d-none",
+                            }}
+                        >
+                            <img src={activeCrewMember?.image} alt={activeCrewMember?.name} className="crew-image" />
+                        </CSSTransition>
+                    </TransitionGroup>
                 </div>
             </div>
         </div>
