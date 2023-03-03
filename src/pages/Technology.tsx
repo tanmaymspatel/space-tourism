@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { techData } from "../components/data";
 
 function Technology() {
@@ -27,16 +28,42 @@ function Technology() {
                             </div>
                         </div>
                         <div className="tech-detail-col-2">
-                            <h4 className="tech-pre-heading text-uppercase fw-light">The Terminology...</h4>
-                            <h2 className="tech-name text-uppercase text-light fw-light">{activeTechnology?.name}</h2>
-                            <p className="tech-description fw-light">{activeTechnology?.description}</p>
+                            <TransitionGroup>
+                                <CSSTransition
+                                    timeout={600}
+                                    key={techIndex}
+                                    classNames={{
+                                        enter: "transition-enter",
+                                        enterActive: "transition-enter-active",
+                                        exit: "d-none",
+                                    }}
+                                >
+                                    <div>
+                                        <h4 className="tech-pre-heading text-uppercase fw-light">The Terminology...</h4>
+                                        <h2 className="tech-name text-uppercase text-light fw-light">{activeTechnology?.name}</h2>
+                                        <p className="tech-description fw-light">{activeTechnology?.description}</p>
+                                    </div>
+                                </CSSTransition>
+                            </TransitionGroup>
                         </div>
                     </div>
                 </div>
-                <div className="tech-col-2">
-                    <img src={activeTechnology?.imageSm} alt={activeTechnology?.name} className="tech-image show-sm" />
-                    <img src={activeTechnology?.imageLg} alt={activeTechnology?.name} className="tech-image show-lg" />
-                </div>
+                <TransitionGroup>
+                    <CSSTransition
+                        timeout={600}
+                        key={techIndex}
+                        classNames={{
+                            enter: "transition-enter",
+                            enterActive: "transition-enter-active",
+                            exit: "d-none",
+                        }}
+                    >
+                        <div className="tech-col-2">
+                            <img src={activeTechnology?.imageSm} alt={activeTechnology?.name} className="tech-image show-sm" />
+                            <img src={activeTechnology?.imageLg} alt={activeTechnology?.name} className="tech-image show-lg" />
+                        </div>
+                    </CSSTransition>
+                </TransitionGroup>
             </div>
         </div>
     )

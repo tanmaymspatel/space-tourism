@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { destinationData } from "../components/data";
 
 function Destination() {
@@ -24,9 +26,21 @@ function Destination() {
                             <span className="heading-index">01</span>
                             <span className="text-uppercase text-light">Pick Your Destination</span>
                         </h3>
-                        <figure className="image-container text-align">
-                            <img src={currentDestination?.image} alt={currentDestination?.title} className="destination-image" />
-                        </figure>
+                        <TransitionGroup>
+                            <CSSTransition
+                                timeout={600}
+                                key={destIndex}
+                                classNames={{
+                                    enter: "transition-enter",
+                                    enterActive: "transition-enter-active",
+                                    exit: "d-none",
+                                }}
+                            >
+                                <figure className="image-container text-align">
+                                    <img src={currentDestination?.image} alt={currentDestination?.title} className="destination-image" />
+                                </figure>
+                            </CSSTransition>
+                        </TransitionGroup>
                     </div>
                     <div className="col destination-col text-light d-flex flex-column">
                         <div className="destination-header">
@@ -34,20 +48,32 @@ function Destination() {
                                 {destinationTabs}
                             </nav>
                         </div>
-                        <div className="flex-grow-1 text-align">
-                            <h2 className="destination-title text-uppercase fw-light">{currentDestination?.title}</h2>
-                            <p className="destination-description">{currentDestination?.description}</p>
-                            <div className="row destination-footer">
-                                <div className="destination-footer-col">
-                                    <h6 className="footer-pre-heading fw-light text-uppercase">Avg. Distance</h6>
-                                    <h3 className="footer-heading fw-light">{currentDestination?.avgDistance}</h3>
+                        <TransitionGroup>
+                            <CSSTransition
+                                timeout={600}
+                                key={destIndex}
+                                classNames={{
+                                    enter: "transition-enter",
+                                    enterActive: "transition-enter-active",
+                                    exit: "d-none",
+                                }}
+                            >
+                                <div className="flex-grow-1 text-align">
+                                    <h2 className="destination-title text-uppercase fw-light">{currentDestination?.title}</h2>
+                                    <p className="destination-description">{currentDestination?.description}</p>
+                                    <div className="row destination-footer">
+                                        <div className="destination-footer-col">
+                                            <h6 className="footer-pre-heading fw-light text-uppercase">Avg. Distance</h6>
+                                            <h3 className="footer-heading fw-light">{currentDestination?.avgDistance}</h3>
+                                        </div>
+                                        <div className="destination-footer-col">
+                                            <h6 className="footer-pre-heading fw-light text-uppercase">Est. Travel Time</h6>
+                                            <h3 className="footer-heading fw-light">{currentDestination?.estTravelTime}</h3>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="destination-footer-col">
-                                    <h6 className="footer-pre-heading fw-light text-uppercase">Est. Travel Time</h6>
-                                    <h3 className="footer-heading fw-light">{currentDestination?.estTravelTime}</h3>
-                                </div>
-                            </div>
-                        </div>
+                            </CSSTransition>
+                        </TransitionGroup>
                     </div>
                 </div>
             </div>
