@@ -59,8 +59,6 @@ function Technology() {
                                 exit: "d-none",
                             }}
                         >
-                            {/* <img src={activeTechnology?.imageSm} alt={activeTechnology?.name} className="tech-image show-sm" />
-                            <img src={activeTechnology?.imageLg} alt={activeTechnology?.name} className="tech-image show-lg" /> */}
                             <div className={`tech-img-${techIndex + 1} tech-img`}></div>
                         </CSSTransition>
                     </TransitionGroup>

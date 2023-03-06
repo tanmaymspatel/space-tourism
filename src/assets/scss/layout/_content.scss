@@ -134,11 +134,16 @@
     }
 
     .home-explore {
-        height: 250px;
-        width: 250px;
+        height: 220px;
+        width: 220px;
         background: white;
         border-radius: 50%;
         position: relative;
+
+        @include breakpoint-up(sm) {
+            height: 250px;
+            width: 250px;
+        }
     }
 
     .explore-text {
@@ -568,13 +573,17 @@
     }
 
     .tech-img {
-        height: 240px;
+        height: 150px;
         width: 100%;
         position: absolute;
         right: 0;
         background-repeat: no-repeat;
         background-size: contain;
         top: 15%;
+
+        @include breakpoint-up(x-sm) {
+            height: 240px;
+        }
 
         @include breakpoint-up(sm) {
             height: 400px;
