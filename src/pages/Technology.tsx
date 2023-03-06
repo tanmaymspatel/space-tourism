@@ -48,22 +48,23 @@ function Technology() {
                         </div>
                     </div>
                 </div>
-                <TransitionGroup>
-                    <CSSTransition
-                        timeout={600}
-                        key={techIndex}
-                        classNames={{
-                            enter: "transition-enter",
-                            enterActive: "transition-enter-active",
-                            exit: "d-none",
-                        }}
-                    >
-                        <div className="tech-col-2">
-                            <img src={activeTechnology?.imageSm} alt={activeTechnology?.name} className="tech-image show-sm" />
-                            <img src={activeTechnology?.imageLg} alt={activeTechnology?.name} className="tech-image show-lg" />
-                        </div>
-                    </CSSTransition>
-                </TransitionGroup>
+                <div className="tech-col-2">
+                    <TransitionGroup>
+                        <CSSTransition
+                            timeout={600}
+                            key={techIndex}
+                            classNames={{
+                                enter: "transition-enter",
+                                enterActive: "transition-enter-active",
+                                exit: "d-none",
+                            }}
+                        >
+                            {/* <img src={activeTechnology?.imageSm} alt={activeTechnology?.name} className="tech-image show-sm" />
+                            <img src={activeTechnology?.imageLg} alt={activeTechnology?.name} className="tech-image show-lg" /> */}
+                            <div className={`tech-img-${techIndex + 1} tech-img`}></div>
+                        </CSSTransition>
+                    </TransitionGroup>
+                </div>
             </div>
         </div>
     )

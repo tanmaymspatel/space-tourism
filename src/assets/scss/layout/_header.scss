@@ -53,16 +53,22 @@
         background-color: rgba($light, 0.15);
         backdrop-filter: blur(30px);
         position: absolute;
-        left: 50%;
+        left: 0%;
         right: 0;
         flex-direction: column;
         height: 100%;
-        padding: 6rem 3rem 0;
+        padding: 6rem 1rem 0;
         z-index: 1;
         transform: translateX(100%);
         transition: $transition-timing all;
 
+        @include breakpoint-up(x-sm) {
+            left: 50%;
+        }
+
         @include breakpoint-up(sm) {
+            left: 50%;
+            padding: 6rem 3rem 0;
             transform: translateX(0);
             padding-top: 0rem;
             position: static;

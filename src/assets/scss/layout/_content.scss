@@ -425,7 +425,11 @@
     // technology
 
     .technology-row {
-        padding-top: 22.5rem;
+        padding-top: 16rem;
+
+        @include breakpoint-up(sm) {
+            padding-top: 20rem;
+        }
 
         @include breakpoint-up(md) {
             padding-top: 29rem;
@@ -448,10 +452,7 @@
         }
     }
 
-    .tech-col-2 {
-        width: 28%;
-        padding-left: 4rem;
-    }
+
 
     .tech-details-row {
         flex-direction: column;
@@ -528,13 +529,16 @@
     }
 
     .tech-name {
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-family: "Bellefair", serif;
         padding: 0.5rem 0;
 
+        @include breakpoint-up(sm) {
+            font-size: 2.5rem;
+        }
+
         @include breakpoint-up(md) {
             padding: 1rem 0;
-
         }
 
         @include breakpoint-up(xl) {
@@ -554,25 +558,60 @@
         }
     }
 
-    .tech-image {
+    .tech-col-2 {
+        width: 100%;
+        padding-left: 4rem;
+
+        @include breakpoint-up(lg) {
+            width: 28%;
+        }
+    }
+
+    .tech-img {
+        height: 240px;
+        width: 100%;
         position: absolute;
         right: 0;
-        left: 0;
-        top: 31%;
-        transform: translateY(-50%);
-        width: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 15%;
 
-        @include breakpoint-up(md) {
-            top: 40%;
+        @include breakpoint-up(sm) {
+            height: 400px;
         }
 
         @include breakpoint-up(lg) {
-            width: auto;
             top: 50%;
-            left: auto;
-            height: 50%;
+            transform: translateY(-50%);
+            width: 350px;
+        }
+
+        &.tech-img-1 {
+            background-image: url("../../images/technology/image-launch-vehicle-landscape.jpg");
+
+            @include breakpoint-up(lg) {
+                background-image: url("../../images/technology/image-launch-vehicle-portrait.jpg");
+            }
+        }
+
+        &.tech-img-2 {
+            background-image: url("../../images/technology/image-spaceport-landscape.jpg");
+
+            @include breakpoint-up(lg) {
+                background-image: url("../../images/technology/image-spaceport-portrait.jpg");
+            }
+        }
+
+        &.tech-img-3 {
+            background-image: url("../../images/technology/image-space-capsule-landscape.jpg");
+
+            @include breakpoint-up(lg) {
+                background-image: url("../../images/technology/image-space-capsule-portrait.jpg");
+            }
         }
     }
+
+
 }
 
 // transition group 
